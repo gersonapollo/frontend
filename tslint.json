@@ -1,5 +1,16 @@
 {
   "extends": "tslint:recommended",
+  "linterOptions": {
+    "exclude": [
+      "*/package.json",
+      "**/*.json",
+      "*.json",
+      "**/*.spec.ts",
+      "**/*.po.ts",
+      "**/*.e2e-spec.ts",
+      "**/test.ts"
+    ]
+  },
   "rules": {
     "array-type": false,
     "arrow-parens": false,
@@ -83,7 +94,26 @@
     "template-banana-in-box": true,
     "template-no-negated-async": true,
     "use-lifecycle-interface": true,
-    "use-pipe-transform-interface": true
+    "use-pipe-transform-interface": true,
+    "typedef": [
+      true,
+      "call-signature",
+      "arrow-call-signature",
+      "parameter",
+      "arrow-parameter",
+      "property-declaration",
+      "object-destructuring",
+      "array-destructuring"
+    ],
+    "no-any": [
+      true,
+      {
+        "ignore-rest-args": true
+      }
+    ],
+    "no-duplicate-variable": [
+      true, "check-parameters"
+    ]
   },
   "rulesDirectory": [
     "codelyzer"
