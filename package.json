@@ -13,6 +13,7 @@
     "pull-request-validator": "npm run lint && npm run test",
     "stub": "cd stub && nodemon index.ts",
     "mock": "ng serve --configuration=mock",
+    "dev": "ng serve --configuration=dev",
     "generate-docs": "compodoc -p tsconfig.app.json",
     "server-docs": "compodoc -s tsconfig.app.json"
   },
