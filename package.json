@@ -14,7 +14,7 @@
     "stub": "cd stub && nodemon index.ts",
     "mock": "ng serve --configuration=mock",
     "generate-docs": "compodoc -p tsconfig.app.json",
-    "serve-docs": "compodoc -s tsconfig.app.json"
+    "server-docs": "compodoc -s tsconfig.app.json"
   },
   "husky": {
     "hooks": {
