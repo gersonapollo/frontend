@@ -26,6 +26,7 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "./node_modules/eva-icons/style/eva-icons.css",
+              "./node_modules/bootstrap-4-grid/css/grid.min.css",
               "src/styles.scss"
             ],
             "scripts": []
