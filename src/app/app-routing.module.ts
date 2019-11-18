@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
-
-const routes: Routes = [];
+// tslint:disable: typedef
+const routes: Routes = [
+  { path: '', redirectTo: 'expenses-requests', pathMatch: 'full' },
+  {
+    path: 'components',
+    loadChildren: () => import('./view-components/view-components.module').then(m => m.ViewComponentsModule)
+  }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
