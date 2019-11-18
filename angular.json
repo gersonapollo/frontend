@@ -26,18 +26,17 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "./node_modules/eva-icons/style/eva-icons.css",
+              "./node_modules/bootstrap-4-grid/css/grid.min.css",
               "src/styles.scss"
             ],
             "scripts": []
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.prod.ts"
+              }],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -47,8 +46,7 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "budgets": [
-                {
+              "budgets": [{
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
@@ -61,21 +59,17 @@
               ]
             },
             "mock": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.mock.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.mock.ts"
+              }],
               "aot": true
             },
             "dev": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.dev.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.dev.ts"
+              }],
               "aot": true
             }
           }
@@ -83,11 +77,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "smapp-frontend:build"
+            "browserTarget": "smapp-frontend:build",
+            "aot": true
           },
           "configurations": {
             "production": {
               "browserTarget": "smapp-frontend:build:production"
+            },
+            "mock": {
+              "browserTarget": "smapp-frontend:build:mock"
+            },
+            "dev": {
+              "browserTarget": "smapp-frontend:build:dev"
             }
           }
         },
