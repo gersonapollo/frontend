@@ -12,7 +12,7 @@ pipeline {
             steps {
                 rtServer (
                     id: "ARTIFACTORY_SERVER",
-                    url: SERVER_URL,
+                    url: "localhost:8081",
                     credentialsId: CREDENTIALS
                 )
             }
