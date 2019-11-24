@@ -37,7 +37,8 @@ pipeline {
 //                     host: 'tcp://127.0.0.1:8081',
                     targetRepo: 'docker-local/',
                     // Attach custom properties to the published artifacts:
-                    properties: 'project-name=frontend;status=stable'
+                    properties: 'project-name=frontend;status=stable',
+                    echo 'Testando Pipeline'
                 )
             }
         }
@@ -46,7 +47,8 @@ pipeline {
             steps {
                 rtPublishBuildInfo (
                     serverId: "ARTIFACTORY_SERVER",
-                    buildName: 'frontend'
+                    buildName: 'frontend',
+                    echo 'ARTIFACTORY_SERVER'
                 )
             }
         }
