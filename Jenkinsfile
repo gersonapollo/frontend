@@ -21,7 +21,7 @@ pipeline {
         stage ('Build docker image') {
             steps {
                 script {
-                    docker.build(ARTIFACTORY_DOCKER_REGISTRY + '/frontend:latest', 'gersonapollo/frontend/tree/release/rc')
+                    docker.build('localhost:8081/docker/frontend:latest', 'gersonapollo/frontend/tree/release/rc')
                 }
             }
         }
@@ -30,7 +30,7 @@ pipeline {
             steps {
                 rtDockerPush(
                     serverId: "ARTIFACTORY_SERVER",
-                    image: ARTIFACTORY_DOCKER_REGISTRY + '/frontend:latest',
+                    image: 'localhost:8081/docker/frontend:latest',
                     // Host:
                     // On OSX: "tcp://127.0.0.1:1234"
                     // On Linux can be omitted or null
