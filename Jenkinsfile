@@ -35,7 +35,7 @@ pipeline {
                     // On OSX: "tcp://127.0.0.1:1234"
                     // On Linux can be omitted or null
 //                     host: 'tcp://127.0.0.1:8081',
-                    targetRepo: 'docker-local',
+                    targetRepo: 'docker-local/',
                     // Attach custom properties to the published artifacts:
                     properties: 'project-name=frontend;status=stable'
                 )
@@ -45,7 +45,8 @@ pipeline {
         stage ('Publish build info') {
             steps {
                 rtPublishBuildInfo (
-                    serverId: "ARTIFACTORY_SERVER"
+                    serverId: "ARTIFACTORY_SERVER",
+                    buildName: 'frontend'
                 )
             }
         }
