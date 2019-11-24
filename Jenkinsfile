@@ -7,7 +7,7 @@ pipeline {
 
     stage('Cloning Git') {
       steps {
-        git 'https://github.com/gersonapollo/frontend/tree/release/rc'
+        git 'https://github.com/gersonapollo/frontend.git'
       }
     }
 
