@@ -21,7 +21,7 @@ pipeline {
         stage ('Build docker image') {
             steps {
                 script {
-                    docker.build('localhost:8081/docker/frontend:latest', '/release/rc')
+                    docker.build('localhost:8081/docker/frontend:latest')
                 }
             }
         }
