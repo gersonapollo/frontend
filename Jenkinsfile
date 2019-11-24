@@ -13,7 +13,7 @@ pipeline {
                 rtServer (
                     id: "ARTIFACTORY_SERVER",
                     url: "localhost:8081",
-                    credentialsId: artifactory_credentials
+                    credentialsId: ARTIFACTORY_CREDENTIALS
                 )
             }
         }
