@@ -21,7 +21,7 @@ pipeline {
         stage ('Build docker image') {
             steps {
                 script {
-                    docker.build('localhost:8081/docker/frontend:latest')
+                    docker.build('frontend:latest')
                 }
             }
         }
@@ -30,14 +30,14 @@ pipeline {
             steps {
                 rtDockerPush(
                     serverId: "ARTIFACTORY_SERVER",
-                    image: 'localhost:8081/docker/frontend:latest',
+                    image: 'frontend:latest',
                     // Host:
                     // On OSX: "tcp://127.0.0.1:1234"
                     // On Linux can be omitted or null
                     host: "tcp://127.0.0.1:8081",
                     targetRepo: 'docker-local',
                     // Attach custom properties to the published artifacts:
-                    properties: 'project-name=docker1;status=stable'
+                    properties: 'project-name=frontend;status=stable'
                 )
             }
         }
