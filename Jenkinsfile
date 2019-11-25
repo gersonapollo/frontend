@@ -21,7 +21,7 @@ pipeline {
         stage ('Build docker image') {
             steps {
                 script {
-                    docker.build('frontend:latest')
+                    docker.build('localhost:8081/docker-local/frontend:latest')
                 }
             }
         }
@@ -30,7 +30,7 @@ pipeline {
             steps {
                 rtDockerPush(
                     serverId: "ARTIFACTORY_SERVER",
-                    image: 'frontend:latest',
+                    image: 'localhost:8081/docker-local/frontend:latest',
                     // Host:
                     // On OSX: "tcp://127.0.0.1:1234"
                     // On Linux can be omitted or null
@@ -42,12 +42,12 @@ pipeline {
             }
         }
 
-//         stage ('Publish build info') {
-//             steps {
-//                 rtPublishBuildInfo (
-//                     serverId: "ARTIFACTORY_SERVER",
-//                 )
-//             }
-//         }
+        stage ('Publish build info') {
+            steps {
+                rtPublishBuildInfo (
+                    serverId: "ARTIFACTORY_SERVER",
+                )
+            }
+        }
     }
 }
