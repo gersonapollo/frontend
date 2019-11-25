@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: front
+  template:
+    metadata:
+      labels:
+        component: front
+    spec:
+      containers:
+        - name: frontend
+          image: localhost:8081/docker-local/frontend
+          ports:
+            - containerPort: 4200
+      imagePullSecrets:
+        - name: artifactorysecret2
