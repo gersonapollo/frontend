@@ -42,13 +42,12 @@ pipeline {
             }
         }
 
-        stage ('Publish build info') {
-            steps {
-                rtPublishBuildInfo (
-                    serverId: "ARTIFACTORY_SERVER",
-                    buildName: 'frontend'
-                )
-            }
-        }
+//         stage ('Publish build info') {
+//             steps {
+//                 rtPublishBuildInfo (
+//                     serverId: "ARTIFACTORY_SERVER",
+//                 )
+//             }
+//         }
     }
 }
