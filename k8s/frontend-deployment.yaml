@@ -14,8 +14,6 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: localhost:8081/docker-local/frontend
-          ports:
-            - containerPort: 4200
+          image: 172.26.0.1:8081/docker-local/frontend
       imagePullSecrets:
-        - name: artifactorysecret2
+        - name: artifactorysecret5
